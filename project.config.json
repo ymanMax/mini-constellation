@@ -37,7 +37,13 @@
     ],
     "ignoreUploadUnusedFiles": false,
     "ignoreDevUnusedFiles": false,
-    "ignoreDevUnusedFile": false
+    "ignoreDevUnusedFile": false,
+    "compileWorklet": false,
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "condition": false,
+    "swc": false,
+    "disableSWC": true
   },
   "compileType": "miniprogram",
   "condition": {},
@@ -45,9 +51,11 @@
     "tabIndent": "insertSpaces",
     "tabSize": 2
   },
-  "libVersion": "2.19.4",
+  "libVersion": "2.31.0",
   "packOptions": {
     "ignore": [],
     "include": []
-  }
+  },
+  "appid": "wx1536343da3ad073d",
+  "simulatorPluginLibVersion": {}
 }

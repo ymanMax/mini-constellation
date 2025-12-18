@@ -1,4 +1,7 @@
 const path = {
-  constellationAll: '/com/json/fortune.js',
+  constellationAll: '/constellation/list',
+  constellationDetail: '/constellation/detail',
+  constellationMatch: '/constellation/match',
+  constellationRanking: '/constellation/ranking'
 }
 export default path

@@ -135,21 +135,30 @@ Page({
       dateActiveIndex: index,
     })
     const info = this.data.starData[index]
-    for (let i = 0; i < info.content.length; i++) {
-      info.content[i].animation = this.animationShow(i * -50, 0, 0, 0)
-    }
-
-    this.setData({
-      starInfo: info,
-    })
-    setTimeout(() => {
+    
+    // 添加安全检查，防止content为undefined
+    if (info && info.content && Array.isArray(info.content)) {
       for (let i = 0; i < info.content.length; i++) {
-        info.content[i].animation = this.animationShow(0, 1, (i + 1) * 20)
+        info.content[i].animation = this.animationShow(i * -50, 0, 0, 0)
       }
+
       this.setData({
         starInfo: info,
       })
-    }, 100)
+      setTimeout(() => {
+        for (let i = 0; i < info.content.length; i++) {
+          info.content[i].animation = this.animationShow(0, 1, (i + 1) * 20)
+        }
+        this.setData({
+          starInfo: info,
+        })
+      }, 100)
+    } else {
+      // 如果content不存在，设置默认的starInfo
+      this.setData({
+        starInfo: info || {},
+      })
+    }
   },
   // 数据请求
   getData() {
