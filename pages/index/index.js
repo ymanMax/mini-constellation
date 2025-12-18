@@ -160,6 +160,14 @@ Page({
       })
     }
   },
+
+  // 跳转到星座配对页面
+  goToMatch() {
+    wx.navigateTo({
+      url: '/pages/match/match'
+    })
+  },
+
   // 数据请求
   getData() {
     this.setData({

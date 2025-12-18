@@ -197,5 +197,29 @@
         border-top: 2rpx dashed #eae9ef;
       }
     }
+
+    .match_entry {
+      text-align: center;
+      margin: 40rpx 0;
+      .match_entry_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
+        color: white;
+        border: none;
+        border-radius: 50rpx;
+        padding: 25rpx 80rpx;
+        font-size: 32rpx;
+        font-weight: 500;
+        box-shadow: 0 8rpx 24rpx rgba(255, 107, 107, 0.3);
+        iconfont {
+          margin-right: 15rpx;
+        }
+      }
+      .match_entry_btn::after {
+        border: none;
+      }
+    }
   }
 }

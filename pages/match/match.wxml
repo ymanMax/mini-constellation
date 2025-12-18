@@ -1,0 +1,70 @@
+<view class="container_match">
+  <!-- 顶部导航栏 -->
+  <nav-custom title="星座配对" bgColor="background-color: rgba(115, 90, 253, 1);" textColor="white"></nav-custom>
+
+  <view class="main_body">
+    <!-- 星座选择区域 -->
+    <view class="star_selection">
+      <view class="selection_item">
+        <text class="label">你的星座</text>
+        <picker bindchange="onStar1Change" value="{{star1Index}}" range="{{starNames}}">
+          <view class="picker_display">
+            <iconfont class="star_icon" name="{{starNavData[star1Index].icon}}" size="60" />
+            <text>{{starNavData[star1Index].astroname}}</text>
+          </view>
+        </picker>
+      </view>
+
+      <view class="love_symbol">
+        <iconfont name="icon-aixin" size="48" color="#ff6b6b"></iconfont>
+      </view>
+
+      <view class="selection_item">
+        <text class="label">TA的星座</text>
+        <picker bindchange="onStar2Change" value="{{star2Index}}" range="{{starNames}}">
+          <view class="picker_display">
+            <iconfont class="star_icon" name="{{starNavData[star2Index].icon}}" size="60" />
+            <text>{{starNavData[star2Index].astroname}}</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 配对结果区域 -->
+    <view class="match_result" wx:if="{{showResult}}">
+      <view class="match_score">
+        <text class="score_label">配对指数</text>
+        <text class="score">{{matchResult.score}}%</text>
+      </view>
+
+      <view class="match_analysis">
+        <view class="analysis_title">配对分析</view>
+        <view class="analysis_content">{{matchResult.analysis}}</view>
+      </view>
+
+      <view class="match_details">
+        <view class="detail_item">
+          <text class="detail_label">爱情</text>
+          <text class="detail_value">{{matchResult.love}}</text>
+        </view>
+        <view class="detail_item">
+          <text class="detail_label">亲情</text>
+          <text class="detail_value">{{matchResult.family}}</text>
+        </view>
+        <view class="detail_item">
+          <text class="detail_label">友情</text>
+          <text class="detail_value">{{matchResult.friendship}}</text>
+        </view>
+        <view class="detail_item">
+          <text class="detail_label">注意事项</text>
+          <text class="detail_value">{{matchResult.notice}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 开始配对按钮 -->
+    <view class="match_button">
+      <button bindtap="onMatch" class="match_btn">开始配对</button>
+    </view>
+  </view>
+</view>
