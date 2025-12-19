@@ -15,6 +15,7 @@ Page({
     dateActiveIndex: 0, // 选中的当前日期下标
     starData: [],
     starInfo: {},
+    showReminderSettings: false, // 是否显示提醒设置
   },
 
   onLoad() {
@@ -187,5 +188,27 @@ Page({
         }, 300)
       })
     })
+  },
+
+  // 显示提醒设置
+  showReminderSettings() {
+    this.setData({
+      showReminderSettings: true
+    })
+  },
+
+  // 隐藏提醒设置
+  hideReminderSettings() {
+    this.setData({
+      showReminderSettings: false
+    })
+  },
+
+  // 提醒设置保存成功
+  onReminderSettingSave(e) {
+    const { setting } = e.detail
+    console.log('提醒设置保存成功:', setting)
+
+    // 可以在这里添加一些额外的逻辑，比如根据设置发送提醒等
   },
 })

@@ -1,0 +1,93 @@
+<view class="reminder-settings">
+  <view class="settings-header">
+    <text class="title">星座运势提醒</text>
+    <view class="close-btn" bindtap="onClose">
+      <iconfont name="icon-close" size="32"></iconfont>
+    </view>
+  </view>
+
+  <view class="settings-content">
+    <!-- 提醒开关 -->
+    <view class="setting-item">
+      <view class="item-left">
+        <text class="item-title">每日运势提醒</text>
+        <text class="item-desc">开启后将每日推送星座运势</text>
+      </view>
+      <view class="item-right">
+        <switch checked="{{reminderSetting.isEnabled}}" bindchange="onEnableChange" />
+      </view>
+    </view>
+
+    <!-- 提醒方式 -->
+    <view class="setting-item" wx:if="{{reminderSetting.isEnabled}}">
+      <view class="item-left">
+        <text class="item-title">提醒方式</text>
+        <text class="item-desc">选择接收运势提醒的方式</text>
+      </view>
+      <view class="item-right">
+        <view class="reminder-types">
+          <view class="type-item {{reminderSetting.reminderType.includes('push') ? 'active' : ''}}"
+                bindtap="onTypeToggle" data-type="push">
+            <iconfont name="icon-notification" size="24"></iconfont>
+            <text>推送</text>
+          </view>
+          <view class="type-item {{reminderSetting.reminderType.includes('sms') ? 'active' : ''}}"
+                bindtap="onTypeToggle" data-type="sms">
+            <iconfont name="icon-message" size="24"></iconfont>
+            <text>短信</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 提醒时间 -->
+    <view class="setting-item" wx:if="{{reminderSetting.isEnabled}}">
+      <view class="item-left">
+        <text class="item-title">提醒时间</text>
+        <text class="item-desc">选择每日推送运势的时间</text>
+      </view>
+      <view class="item-right">
+        <picker mode="time" value="{{reminderSetting.reminderTime}}" bindchange="onTimeChange">
+          <view class="picker-text">{{reminderSetting.reminderTime}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 选择星座 -->
+    <view class="setting-item" wx:if="{{reminderSetting.isEnabled}}">
+      <view class="item-left">
+        <text class="item-title">选择星座</text>
+        <text class="item-desc">选择您要接收运势提醒的星座</text>
+      </view>
+      <view class="item-right">
+        <picker value="{{reminderSetting.constellationId}}" range="{{constellationList}}" range-key="astroname" bindchange="onConstellationChange">
+          <view class="picker-text">{{selectedConstellationName}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 提醒记录 -->
+    <view class="setting-section" wx:if="{{reminderSetting.isEnabled}}">
+      <text class="section-title">提醒记录</text>
+      <view class="record-list">
+        <view class="record-item" wx:for="{{reminderRecords}}" wx:key="id">
+          <view class="record-left">
+            <text class="record-date">{{item.reminderDate}}</text>
+            <text class="record-time">{{item.reminderTime}}</text>
+          </view>
+          <view class="record-right">
+            <view class="record-status {{item.status}}">{{item.status === 'sent' ? '已发送' : '发送失败'}}</view>
+          </view>
+        </view>
+        <view class="record-empty" wx:if="{{reminderRecords.length === 0}}">
+          <text>暂无提醒记录</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 保存按钮 -->
+  <view class="settings-footer" wx:if="{{reminderSetting.isEnabled}}">
+    <button class="save-btn" bindtap="onSave">保存设置</button>
+  </view>
+</view>

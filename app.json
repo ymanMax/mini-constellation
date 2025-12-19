@@ -8,7 +8,8 @@
   "resolveAlias": {},
   "usingComponents": {
     "nav-custom": "/components/NavCustom",
-    "iconfont": "/iconfont/iconfont"
+    "iconfont": "/iconfont/iconfont",
+    "reminder-settings": "/components/ReminderSettings/ReminderSettings"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

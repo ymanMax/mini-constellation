@@ -64,9 +64,33 @@
       }
       .header_right {
         margin-right: 28rpx;
-        height: 72rpx;
-        width: 72rpx;
-        background-size: contain;
+        display: flex;
+        align-items: center;
+        gap: 20rpx;
+
+        .iconA {
+          height: 72rpx;
+          width: 72rpx;
+          background-size: contain;
+        }
+
+        .reminder-btn {
+          height: 72rpx;
+          width: 72rpx;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(115, 90, 253, 0.1);
+          border-radius: 50%;
+          font-size: 36rpx;
+          color: #735afd;
+          transition: all 0.3s ease;
+
+          &:active {
+            background: rgba(115, 90, 253, 0.2);
+            transform: scale(0.95);
+          }
+        }
       }
     }
 
