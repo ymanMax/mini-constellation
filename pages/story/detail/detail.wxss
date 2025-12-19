@@ -1,0 +1,78 @@
+.container_detail {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #735afd, #9b86ff, #ffffff);
+  padding-bottom: 40rpx;
+}
+
+/* 星座头部信息 */
+.star_header {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20rpx;
+  padding: 40rpx;
+  margin: 20rpx 30rpx;
+  box-shadow: 0 4rpx 15rpx rgba(0, 0, 0, 0.1);
+}
+
+.star_icon {
+  margin-right: 40rpx;
+}
+
+.star_basic {
+  flex: 1;
+}
+
+.star_name {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.star_date {
+  font-size: 28rpx;
+  color: #999;
+}
+
+/* 内容区域 */
+.content_area {
+  padding: 0 30rpx;
+}
+
+/* 故事部分 */
+.story_section, .culture_section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 15rpx rgba(0, 0, 0, 0.1);
+}
+
+.section_title {
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #735afd;
+  margin-bottom: 20rpx;
+  padding-bottom: 15rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+
+.title_icon {
+  font-size: 36rpx;
+  margin-right: 12rpx;
+}
+
+.section_content {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.section_content text {
+  display: block;
+  white-space: pre-line;
+}

@@ -1,0 +1,129 @@
+.container_story {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #735afd, #9b86ff, #ffffff);
+  padding-bottom: 40rpx;
+}
+
+/* 搜索区域 */
+.search_area {
+  padding: 30rpx 30rpx 20rpx;
+  background: rgba(255, 255, 255, 0.95);
+  margin: 0 20rpx;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+}
+
+.search_box {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 30rpx;
+  padding: 0 20rpx;
+  height: 70rpx;
+}
+
+.search_icon {
+  color: #999;
+  font-size: 32rpx;
+  margin-right: 15rpx;
+}
+
+.search_input {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+  height: 100%;
+}
+
+.clear_btn {
+  width: 40rpx;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ccc;
+  border-radius: 50%;
+  margin-left: 10rpx;
+}
+
+.clear_btn iconfont {
+  color: #fff;
+  font-size: 20rpx;
+}
+
+/* 星座列表 */
+.star_list {
+  padding: 0 30rpx;
+}
+
+.star_item {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 15rpx rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.star_item:active {
+  transform: scale(0.98);
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.15);
+}
+
+.star_icon {
+  margin-right: 30rpx;
+}
+
+.star_info {
+  flex: 1;
+}
+
+.star_name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.star_date {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 10rpx;
+}
+
+.star_desc {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.arrow_icon {
+  color: #ccc;
+  font-size: 32rpx;
+}
+
+/* 空状态 */
+.empty_state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 150rpx 30rpx;
+}
+
+.empty_icon {
+  font-size: 120rpx;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 30rpx;
+}
+
+.empty_text {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.8);
+}

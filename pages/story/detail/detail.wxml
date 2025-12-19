@@ -1,0 +1,40 @@
+<view class="container_detail">
+  <!-- 顶部导航栏 -->
+  <nav-custom title="{{starData.name}} 故事" bgColor="background-color: rgba(115, 90, 253, 1);" textColor="white"></nav-custom>
+
+  <!-- 星座头部信息 -->
+  <view class="star_header">
+    <view class="star_icon">
+      <iconfont name="{{starData.icon}}" size="100"></iconfont>
+    </view>
+    <view class="star_basic">
+      <view class="star_name">{{starData.name}}</view>
+      <view class="star_date">{{starData.date}}</view>
+    </view>
+  </view>
+
+  <!-- 故事内容 -->
+  <view class="content_area">
+    <!-- 传说故事 -->
+    <view class="story_section">
+      <view class="section_title">
+        <iconfont class="title_icon" name="icon-gushidao"></iconfont>
+        <text>传说故事</text>
+      </view>
+      <view class="section_content">
+        <text>{{starData.legend}}</text>
+      </view>
+    </view>
+
+    <!-- 文化背景 -->
+    <view class="culture_section">
+      <view class="section_title">
+        <iconfont class="title_icon" name="icon-wenhuabackground"></iconfont>
+        <text>文化背景</text>
+      </view>
+      <view class="section_content">
+        <text>{{starData.culture}}</text>
+      </view>
+    </view>
+  </view>
+</view>
