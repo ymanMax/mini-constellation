@@ -55,6 +55,13 @@
         </view>
       </block>
     </view>
+    <view class="match_entry">
+      <button bindtap="goToMatch" class="match_entry_btn">
+        <iconfont name="icon-aixin" size="32" color="#ff6b6b"></iconfont>
+        <text>星座配对</text>
+      </button>
+    </view>
+
     <ad unit-id="adunit-4beff9d2a32f3af1" ad-intervals="30" />
     <official-account style="width:100%;height:188rpx;"></official-account>
   </view>

@@ -1,0 +1,147 @@
+.container_match {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #735afd, #9d88ff);
+  padding-bottom: 60rpx;
+}
+
+.main_body {
+  padding: 40rpx 30rpx;
+}
+
+/* 星座选择区域 */
+.star_selection {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20rpx;
+  padding: 60rpx 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
+}
+
+.selection_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60rpx;
+}
+
+.selection_item:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  font-weight: 500;
+}
+
+.picker_display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx 40rpx;
+  border: 2rpx solid #735afd;
+  border-radius: 50rpx;
+  background: #fff;
+  min-width: 200rpx;
+}
+
+.star_icon {
+  margin-bottom: 10rpx;
+}
+
+.love_symbol {
+  text-align: center;
+  margin: 40rpx 0;
+}
+
+/* 配对结果区域 */
+.match_result {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
+}
+
+.match_score {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.score_label {
+  display: block;
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.score {
+  font-size: 72rpx;
+  font-weight: bold;
+  color: #735afd;
+}
+
+.match_analysis {
+  margin-bottom: 40rpx;
+}
+
+.analysis_title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.analysis_content {
+  font-size: 28rpx;
+  line-height: 1.6;
+  color: #666;
+}
+
+.match_details {
+  border-top: 1rpx solid #eee;
+  padding-top: 30rpx;
+}
+
+.detail_item {
+  margin-bottom: 25rpx;
+}
+
+.detail_item:last-child {
+  margin-bottom: 0;
+}
+
+.detail_label {
+  display: block;
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.detail_value {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* 配对按钮 */
+.match_button {
+  text-align: center;
+}
+
+.match_btn {
+  background: linear-gradient(to right, #735afd, #9d88ff);
+  color: white;
+  border: none;
+  border-radius: 50rpx;
+  padding: 25rpx 120rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  box-shadow: 0 8rpx 24rpx rgba(115, 90, 253, 0.3);
+}
+
+.match_btn::after {
+  border: none;
+}
