@@ -197,5 +197,25 @@
         border-top: 2rpx dashed #eae9ef;
       }
     }
+    .test_entry {
+      background: linear-gradient(90deg, #735afd 0%, #b63af3 100%);
+      border-radius: 16rpx;
+      padding: 30rpx;
+      margin: 30rpx 0;
+      color: white;
+      text-align: center;
+    }
+    .test_entry:active {
+      transform: scale(0.98);
+    }
+    .test_entry_title {
+      font-size: 32rpx;
+      font-weight: bold;
+      margin-bottom: 10rpx;
+    }
+    .test_entry_desc {
+      font-size: 26rpx;
+      opacity: 0.9;
+    }
   }
 }
