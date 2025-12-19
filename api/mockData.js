@@ -228,3 +228,57 @@ export const constellationMatchData = {
     }
   ]
 };
+
+// 提醒设置数据
+export const reminderSettingData = {
+  code: "success",
+  data: {
+    id: "1",
+    constellationId: 1,
+    constellationName: "白羊座",
+    reminderType: ["push", "sms"], // 提醒方式：push推送，sms短信
+    reminderTime: "08:00", // 提醒时间
+    isEnabled: true, // 是否启用提醒
+    lastUpdated: "2024-01-15 10:30:00"
+  }
+};
+
+// 提醒记录数据
+export const reminderRecordData = {
+  code: "success",
+  data: [
+    {
+      id: "1",
+      constellationId: 1,
+      constellationName: "白羊座",
+      reminderDate: "2024-01-15",
+      reminderTime: "08:00",
+      reminderType: "push",
+      status: "sent", // sent已发送, failed发送失败
+      content: "白羊座今日运势：整体运势不错，感情方面会有惊喜，但工作方面需要多加注意。",
+      sentAt: "2024-01-15 08:00:05"
+    },
+    {
+      id: "2",
+      constellationId: 1,
+      constellationName: "白羊座",
+      reminderDate: "2024-01-14",
+      reminderTime: "08:00",
+      reminderType: "push",
+      status: "sent",
+      content: "白羊座昨日运势：工作运势较好，但财运方面需要谨慎投资。",
+      sentAt: "2024-01-14 08:00:03"
+    },
+    {
+      id: "3",
+      constellationId: 1,
+      constellationName: "白羊座",
+      reminderDate: "2024-01-13",
+      reminderTime: "08:00",
+      reminderType: "push",
+      status: "failed",
+      content: "白羊座运势提醒",
+      sentAt: "2024-01-13 08:00:10"
+    }
+  ]
+};

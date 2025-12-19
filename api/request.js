@@ -1,5 +1,5 @@
 import { getEnvToken } from '../utils/index'
-import { mockDelay, constellationData, constellationDetailData, constellationMatchData } from './mockData.js'
+import { mockDelay, constellationData, constellationDetailData, constellationMatchData, reminderSettingData, reminderRecordData } from './mockData.js'
 
 const { apiPath, token } = getEnvToken()
 export const request = (path, method, data = {}) => {
@@ -184,6 +184,46 @@ export const request = (path, method, data = {}) => {
           return bScore - aScore;
         });
         mockResponse.data = sortedData.slice(0, 5); // 返回前5名
+      }
+      // 提醒设置相关接口
+      else if (path.includes('/reminder/setting')) {
+        if (method === 'GET') {
+          // 获取提醒设置
+          mockResponse.data = reminderSettingData.data;
+        } else if (method === 'POST' || method === 'PUT') {
+          // 创建或更新提醒设置
+          mockResponse.data = {
+            ...reminderSettingData.data,
+            ...data,
+            lastUpdated: new Date().toISOString().slice(0, 19).replace('T', ' ')
+          };
+        } else if (method === 'DELETE') {
+          // 删除提醒设置
+          mockResponse.data = {
+            id: data.id,
+            deleted: true
+          };
+        }
+      }
+      // 提醒记录相关接口
+      else if (path.includes('/reminder/records')) {
+        if (method === 'GET') {
+          // 获取提醒记录
+          mockResponse.data = reminderRecordData.data;
+        } else if (path.includes('/send')) {
+          // 发送提醒
+          mockResponse.data = {
+            id: Date.now().toString(),
+            constellationId: data.constellationId || 1,
+            constellationName: data.constellationName || "白羊座",
+            reminderDate: new Date().toISOString().slice(0, 10),
+            reminderTime: data.reminderTime || "08:00",
+            reminderType: data.reminderType || "push",
+            status: "sent",
+            content: data.content || "星座运势提醒",
+            sentAt: new Date().toISOString().slice(0, 19).replace('T', ' ')
+          };
+        }
       } else {
         // 默认返回所有星座数据
         mockResponse.data = constellationData.data;
