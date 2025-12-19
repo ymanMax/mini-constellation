@@ -188,4 +188,11 @@ Page({
       })
     })
   },
+
+  // 跳转到星座测试页面
+  goToTest() {
+    wx.navigateTo({
+      url: '/pages/test/test'
+    })
+  },
 })

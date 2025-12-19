@@ -1,0 +1,146 @@
+.container_test {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding-bottom: 40rpx;
+}
+
+/* 测试列表样式 */
+.test_list {
+  padding: 20rpx;
+}
+
+.test_item {
+  background: white;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.08);
+}
+
+.test_item:active {
+  transform: scale(0.98);
+}
+
+.test_item_title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.test_item_desc {
+  font-size: 26rpx;
+  color: #666;
+}
+
+/* 测试答题界面样式 */
+.test_questions {
+  padding: 40rpx 30rpx;
+}
+
+.question_header {
+  text-align: center;
+  color: #666;
+  font-size: 28rpx;
+  margin-bottom: 30rpx;
+}
+
+.question_content {
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+  margin-bottom: 60rpx;
+  line-height: 1.5;
+}
+
+.options_list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.option_item {
+  background: white;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.option_item:active {
+  background: #f0f0f0;
+}
+
+/* 测试结果界面样式 */
+.test_result {
+  padding: 40rpx 30rpx;
+}
+
+.result_title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.result_description {
+  background: white;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+.result_suggestion,
+.result_matched {
+  background: white;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.result_suggestion_title,
+.result_matched_title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15rpx;
+}
+
+.result_suggestion_content,
+.result_matched_content {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+.result_buttons {
+  display: flex;
+  gap: 20rpx;
+  margin-top: 40rpx;
+}
+
+.btn_retake,
+.btn_back {
+  flex: 1;
+  padding: 24rpx;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  border: none;
+}
+
+.btn_retake {
+  background: #735afd;
+  color: white;
+}
+
+.btn_back {
+  background: white;
+  color: #735afd;
+  border: 1rpx solid #735afd;
+}

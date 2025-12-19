@@ -1,0 +1,44 @@
+<view class="container_test">
+  <nav-custom title="星座测试" bgColor="background-color: rgba(115, 90, 253, 1);" textColor="white"></nav-custom>
+
+  <!-- 测试列表 -->
+  <view class="test_list" wx:if="{{!currentTest}}">
+    <view class="test_item" wx:for="{{testList}}" wx:key="id" bindtap="startTest" data-test-index="{{index}}">
+      <view class="test_item_title">{{item.title}}</view>
+      <view class="test_item_desc">{{item.desc}}</view>
+    </view>
+  </view>
+
+  <!-- 测试答题界面 -->
+  <view class="test_questions" wx:if="{{currentTest && !showResult}}">
+    <view class="question_header">
+      <text>问题 {{currentQuestionIndex + 1}} / {{currentTest.questions.length}}</text>
+    </view>
+    <view class="question_content">
+      <text>{{currentTest.questions[currentQuestionIndex].question}}</text>
+    </view>
+    <view class="options_list">
+      <view class="option_item" wx:for="{{currentTest.questions[currentQuestionIndex].options}}" wx:key="text" bindtap="selectAnswer" data-answer-score="{{item.score}}">
+        {{item.text}}
+      </view>
+    </view>
+  </view>
+
+  <!-- 测试结果界面 -->
+  <view class="test_result" wx:if="{{showResult && result}}">
+    <view class="result_title">{{result.title}}</view>
+    <view class="result_description">{{result.description}}</view>
+    <view class="result_suggestion">
+      <view class="result_suggestion_title">建议：</view>
+      <view class="result_suggestion_content">{{result.suggestion}}</view>
+    </view>
+    <view class="result_matched">
+      <view class="result_matched_title">匹配星座：</view>
+      <view class="result_matched_content">{{result.matchedStar}}</view>
+    </view>
+    <view class="result_buttons">
+      <button class="btn_retake" bindtap="retakeTest">重新测试</button>
+      <button class="btn_back" bindtap="backToTestList">返回列表</button>
+    </view>
+  </view>
+</view>
