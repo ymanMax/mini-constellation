@@ -1,0 +1,38 @@
+<view class="container_story">
+  <!-- 顶部导航栏 -->
+  <nav-custom title="星座故事" bgColor="background-color: rgba(115, 90, 253, 1);" textColor="white"></nav-custom>
+
+  <!-- 搜索和筛选区域 -->
+  <view class="search_area">
+    <view class="search_box">
+      <iconfont class="search_icon" name="icon-sousuo"></iconfont>
+      <input class="search_input" placeholder="搜索星座故事" value="{{searchKeyword}}" bindinput="onSearchInput" />
+      <view class="clear_btn" wx:if="{{searchKeyword}}" bindtap="onClearSearch">
+        <iconfont name="icon-guanbi"></iconfont>
+      </view>
+    </view>
+  </view>
+
+  <!-- 星座列表 -->
+  <view class="star_list">
+    <view class="star_item" wx:for="{{filteredStars}}" wx:key="id" bindtap="goToStarDetail" data-id="{{item.id}}">
+      <view class="star_icon">
+        <iconfont name="{{item.icon}}" size="60"></iconfont>
+      </view>
+      <view class="star_info">
+        <view class="star_name">{{item.name}}</view>
+        <view class="star_date">{{item.date}}</view>
+        <view class="star_desc">{{item.desc}}</view>
+      </view>
+      <view class="arrow_icon">
+        <iconfont name="icon-arrow-right"></iconfont>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty_state" wx:if="{{filteredStars.length === 0}}">
+    <iconfont class="empty_icon" name="icon-xingzuo"></iconfont>
+    <view class="empty_text">暂无相关星座故事</view>
+  </view>
+</view>

@@ -113,6 +113,14 @@ Page({
       })
     }
   },
+
+  // 跳转到星座故事页面
+  goToStarStory() {
+    wx.navigateTo({
+      url: '/pages/story/story'
+    })
+  },
+
   //切换点击
   tipCilck() {
     this.selectComponent('#tip-dialog').open(this.data.starActiveIndex)
