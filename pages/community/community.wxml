@@ -1,0 +1,86 @@
+<view class="container_community">
+  <nav-custom title="星座社区" bgColor="background-color: rgba(115, 90, 253, 1);" textColor="white"></nav-custom>
+
+  <!-- 发布新帖子 -->
+  <view class="publish_section">
+    <view class="publish_input_container">
+      <input
+        class="publish_input"
+        placeholder="分享你的星座故事..."
+        value="{{newPostContent}}"
+        bindinput="onPostInput"
+        maxlength="200"
+      />
+      <button class="publish_btn" bindtap="publishPost" disabled="{{!newPostContent.trim()}}">发布</button>
+    </view>
+  </view>
+
+  <!-- 帖子列表 -->
+  <view class="posts_list">
+    <view class="post_item" wx:for="{{posts}}" wx:key="id">
+      <!-- 帖子头部 -->
+      <view class="post_header">
+        <image class="avatar" src="{{item.avatar}}" mode="aspectFill"></image>
+        <view class="user_info">
+          <view class="username">{{item.username}}</view>
+          <view class="post_meta">
+            <text class="constellation">{{item.星座}}</text>
+            <text class="create_time">{{item.createTime}}</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 帖子内容 -->
+      <view class="post_content">
+        {{item.content}}
+      </view>
+
+      <!-- 帖子操作 -->
+      <view class="post_actions">
+        <view class="action_item" bindtap="toggleLike" data-post-id="{{item.id}}">
+          <text class="action_icon {{item.isLiked ? 'liked' : ''}}">♥</text>
+          <text class="action_text">{{item.likes}}</text>
+        </view>
+        <view class="action_item" bindtap="showCommentInput" data-post-id="{{item.id}}">
+          <text class="action_icon">💬</text>
+          <text class="action_text">{{item.comments.length}}</text>
+        </view>
+        <view class="action_item" bindtap="sharePost" data-post-id="{{item.id}}">
+          <text class="action_icon">📤</text>
+          <text class="action_text">分享</text>
+        </view>
+      </view>
+
+      <!-- 评论列表 -->
+      <view class="comments_list" wx:if="{{item.comments.length > 0}}">
+        <view class="comment_item" wx:for="{{item.comments}}" wx:key="id" wx:for-item="comment">
+          <image class="comment_avatar" src="{{comment.avatar || '../../assets/images/avatar-default.png'}}" mode="aspectFill"></image>
+          <view class="comment_content">
+            <view class="comment_header">
+              <text class="comment_username">{{comment.username}}</text>
+              <text class="comment_time">{{comment.createTime}}</text>
+            </view>
+            <view class="comment_text">{{comment.content}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 评论输入框 -->
+  <view class="comment_input_overlay" wx:if="{{showCommentInput}}">
+    <view class="comment_input_container">
+      <input
+        class="comment_input"
+        placeholder="写下你的评论..."
+        value="{{commentContent}}"
+        bindinput="onCommentInput"
+        maxlength="150"
+      />
+      <view class="comment_buttons">
+        <button class="comment_cancel_btn" bindtap="cancelComment">取消</button>
+        <button class="comment_send_btn" bindtap="publishComment" disabled="{{!commentContent.trim()}}">发送</button>
+      </view>
+    </view>
+  </view>
+</view>

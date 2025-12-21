@@ -55,6 +55,15 @@
         </view>
       </block>
     </view>
+    <view class="community_entry" bindtap="goToCommunity">
+      <view class="entry_icon">
+        <text class="icon">🌍</text>
+      </view>
+      <view class="entry_text">星座社区</view>
+      <view class="entry_arrow">
+        <text class="icon">></text>
+      </view>
+    </view>
     <ad unit-id="adunit-4beff9d2a32f3af1" ad-intervals="30" />
     <official-account style="width:100%;height:188rpx;"></official-account>
   </view>
