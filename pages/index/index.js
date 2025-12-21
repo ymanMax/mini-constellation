@@ -160,6 +160,12 @@ Page({
       })
     }
   },
+  // 跳转到星座社区
+  goToCommunity() {
+    wx.navigateTo({
+      url: '/pages/community/community'
+    })
+  },
   // 数据请求
   getData() {
     this.setData({

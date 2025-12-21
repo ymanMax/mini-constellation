@@ -197,5 +197,32 @@
         border-top: 2rpx dashed #eae9ef;
       }
     }
+    .community_entry {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30rpx;
+      background: linear-gradient(90deg, #735afd 0%, #b63af3 100%);
+      border-radius: 20rpx;
+      margin: 30rpx 0;
+      color: white;
+      box-shadow: 0 8rpx 20rpx rgba(115, 90, 253, 0.3);
+      .entry_icon {
+        .icon {
+          font-size: 48rpx;
+          color: white;
+        }
+      }
+      .entry_text {
+        font-size: 32rpx;
+        font-weight: bold;
+      }
+      .entry_arrow {
+        .icon {
+          font-size: 32rpx;
+          color: white;
+        }
+      }
+    }
   }
 }

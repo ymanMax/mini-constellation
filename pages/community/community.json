@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "nav-custom": "../../components/NavCustom/NavCustom"
+  },
+  "navigationBarTitleText": "星座社区",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

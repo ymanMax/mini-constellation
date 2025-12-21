@@ -228,3 +228,71 @@ export const constellationMatchData = {
     }
   ]
 };
+
+// 社区数据
+export const communityMockData = {
+  posts: [
+    {
+      id: 1,
+      userId: 2,
+      username: '星空下的鱼',
+      avatar: '../../assets/images/1.png',
+      content: '今天白羊座的运势真的不错！早上出门就捡到了钱，工作也特别顺利，难道是我转运了？',
+      createTime: '2024-01-15 10:30:00',
+      likes: 25,
+      comments: [
+        {
+          id: 101,
+          userId: 3,
+          username: '星座爱好者',
+          avatar: '../../assets/images/1.png',
+          content: '沾沾喜气！白羊座今天这么旺吗？',
+          createTime: '2024-01-15 11:00:00'
+        },
+        {
+          id: 102,
+          userId: 4,
+          username: '幸运星',
+          avatar: '../../assets/images/1.png',
+          content: '我也是白羊座，今天确实感觉精神焕发！',
+          createTime: '2024-01-15 11:30:00'
+        }
+      ],
+      isLiked: false,
+      星座: '白羊座'
+    },
+    {
+      id: 2,
+      userId: 5,
+      username: '月亮使者',
+      avatar: '../../assets/images/1.png',
+      content: '大家觉得双鱼座和天蝎座配对怎么样？我最近在跟一个天蝎座的人交往，感觉很有默契但也有小矛盾。',
+      createTime: '2024-01-15 09:15:00',
+      likes: 42,
+      comments: [
+        {
+          id: 201,
+          userId: 6,
+          username: '配对专家',
+          avatar: '../../assets/images/1.png',
+          content: '双鱼和天蝎是水象星座，理论上很配！需要多沟通哦',
+          createTime: '2024-01-15 09:30:00'
+        }
+      ],
+      isLiked: true,
+      星座: '双鱼座'
+    },
+    {
+      id: 3,
+      userId: 7,
+      username: '太阳之子',
+      avatar: '../../assets/images/1.png',
+      content: '狮子座本周运势：事业蒸蒸日上，感情方面要注意沟通方式。大家有什么补充吗？',
+      createTime: '2024-01-15 08:45:00',
+      likes: 38,
+      comments: [],
+      isLiked: false,
+      星座: '狮子座'
+    }
+  ]
+};
